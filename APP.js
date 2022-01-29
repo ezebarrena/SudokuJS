@@ -4,7 +4,10 @@ function startGame(){
     let shuffled = shuffleBoard(filled)
     let level = generateLevel(shuffled)
     let renderizado = renderLevel(level)
-    
+}
+
+function finish(){
+    let finishedMatrix = getFinishedMatrix()
 }
 
 function createBoard() {
@@ -31,7 +34,7 @@ function fillBoard(board){
         if (i===6){
             numInicial = 3
         }
-
+        
         let numAux = numInicial
 
         for (j; j<= board.length-1; j++){
@@ -47,6 +50,7 @@ function fillBoard(board){
         j = 0
         numInicial += 3
     }
+    console.log(board)
 
     return board
     
@@ -146,6 +150,7 @@ function shuffleBoard(board){
         }
 
     }
+    console.log(board)
     return board
 }
 
@@ -158,8 +163,9 @@ function generateLevel(board){
             r =  Math.floor(Math.random()*8)
             c =  Math.floor(Math.random()*8)
         }
-        board[r][c] = 1
+        board[r][c] = ""
     }
+    return board
 }
 
 function renderLevel(board){
@@ -167,10 +173,18 @@ function renderLevel(board){
     for(let i=0; i<9; i++) {
         for(let j=0; j<9; j++) {
             let elem = 'c' + i.toString() + j.toString();
-            let value = document.getElementById(elem).value;
 
             document.getElementById(elem).value = board[i][j];
-            document.getElementById(elem).disabled = true;
+            if (board[i][j] != ""){
+                document.getElementById(elem).disabled = true;
+            }
+            else{
+                document.getElementById(elem).disabled = false;
+            }
         }
     }
+}
+
+function getFinishedMatrix(){
+    
 }
