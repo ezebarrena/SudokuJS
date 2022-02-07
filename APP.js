@@ -8,6 +8,7 @@ function startGame(){
 
 function finish(){
     let finishedMatrix = getFinishedMatrix()
+    let compareBoards = compare(shuffled, finishedMatrix)
 }
 
 function createBoard() {
@@ -50,7 +51,6 @@ function fillBoard(board){
         j = 0
         numInicial += 3
     }
-    console.log(board)
 
     return board
     
@@ -150,7 +150,6 @@ function shuffleBoard(board){
         }
 
     }
-    console.log(board)
     return board
 }
 
@@ -186,5 +185,19 @@ function renderLevel(board){
 }
 
 function getFinishedMatrix(){
-    
+    let solved = []
+    for (let i = 0; i<9; i++){
+        solved.push([])
+        for (let j = 0; j<9; j++){
+            let elem = 'c' + i.toString() + j.toString()
+            let value = document.getElementById(elem).value
+            solved[i].push(value)
+        }
+    }
+    console.log(solved)
+    return solved
+}
+function compare(shuffle, solved){
+    console.log(shuffle)
+    console.log(solved)
 }
