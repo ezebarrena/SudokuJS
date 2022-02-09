@@ -2,7 +2,7 @@ body {
     font-family: 'Josefin Sans', sans-serif;
   }
   #main {
-    height: 316px;
+    height: 356px;
     width: 316px;
     background-color: black;
     position: relative;
@@ -33,7 +33,33 @@ body {
     float: left;
   }
 
-  
+  #ng-btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin:auto;
+    position:relative;
+    border-radius: 10px;  
+    width: 155px;
+    height: 40px;
+    
+  }
+  #ng-btn:hover{
+    background-color: yellow;
+  }
+
+  #finish-btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin:auto;
+    position:relative;
+    border-radius: 10px;  
+    width:155px;
+    height: 40px;
+  }
+
+  #finish-btn:hover{
+    background-color: yellow;
+  }
   
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -72,37 +98,19 @@ body {
     border-radius: 4px;
     border-color: black;
   }
-  #submit {
-    width: 60px;
-    height: 25px;
-    background-color: black;
-    color: white;
-    border-radius: 4px;
-    border-color: black;
-  }
+  
   #edit:hover {
     background-color: white;
     color: black;
     border-color: black;
     border-radius: 4px;
   }
-  #submit:hover {
-    background-color: white;
-    color: black;
-    border-color: black;
-    border-radius: 4px;
-  }
+
   input[type="number"][disabled] {
     color: black;
   }
 
-  #buttons {
-    padding-bottom: 10px;
-    margin: auto;
-    border-radius: 0;  
-    width:100%;
-    max-width: 150px;
-  }
+  
 
 .block {
   display: block;

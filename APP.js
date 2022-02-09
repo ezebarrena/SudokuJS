@@ -8,9 +8,10 @@ function startGame(){
 
 function finish(){
     let finishedMatrix = getFinishedMatrix()
-    let compareBoards = compare(shuffled, finishedMatrix)
+    let compareBoards = compare(board, finishedMatrix)
 }
 
+//START GAME BUTTON
 function createBoard() {
     let board = []
     for (let i=0; i<9; i++){
@@ -184,6 +185,7 @@ function renderLevel(board){
     }
 }
 
+//FINISH BUTTON
 function getFinishedMatrix(){
     let solved = []
     for (let i = 0; i<9; i++){
