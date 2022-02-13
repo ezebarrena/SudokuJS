@@ -9,6 +9,7 @@ body {
     border-style: solid;
     border-color: black;
     margin: auto;
+    border-radius: 10px;
   }
   #sub {
     height: 102px;

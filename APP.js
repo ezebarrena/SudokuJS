@@ -8,7 +8,7 @@ function startGame(){
 
 function finish(){
     let finishedMatrix = getFinishedMatrix()
-    let compareBoards = compare(board, finishedMatrix)
+    let compareBoards = compare(shuffled, finishedMatrix)
 }
 
 //START GAME BUTTON
@@ -25,11 +25,12 @@ function createBoard() {
 }
 
 function fillBoard(board){
+    let fi = board
     let numInicial = 1
     let i = 0
     let j = 0
 
-    for (i; i<= board.length-1; i++){
+    for (i; i<= fi.length-1; i++){
         if (i === 3){
             numInicial = 2
         }
@@ -39,11 +40,11 @@ function fillBoard(board){
         
         let numAux = numInicial
 
-        for (j; j<= board.length-1; j++){
+        for (j; j<= fi.length-1; j++){
             if (numAux === 10){
                 numAux = 1
             }
-            board[i][j] = numAux
+            fi[i][j] = numAux
             numAux += 1
             
         }
@@ -53,11 +54,12 @@ function fillBoard(board){
         numInicial += 3
     }
 
-    return board
+    return fi
     
 }
 
 function shuffleBoard(board){
+    let sh = board
     let shuffles = 6000
     let rOc = 0
     for (let i = 0; i <= shuffles; i++){
@@ -73,9 +75,9 @@ function shuffleBoard(board){
                     r2 = Math.floor(Math.random()*3)
                 }
 
-                let aux = board[r1]
-                board[r1] = board[r2]
-                board[r2] = aux
+                let aux = sh[r1]
+                sh[r1] = sh[r2]
+                sh[r2] = aux
             }
 
             if (r1 >= 3 && r1 <= 5){
@@ -85,9 +87,9 @@ function shuffleBoard(board){
                     r2 = Math.floor(Math.random()*(6-4))+4
                 }
 
-                let aux = board[r1]
-                board[r1] = board[r2]
-                board[r2] = aux
+                let aux = sh[r1]
+                sh[r1] = sh[r2]
+                sh[r2] = aux
             }
 
             if (r1 >= 6 && r1 <= 8){
@@ -97,9 +99,9 @@ function shuffleBoard(board){
                     r2 = Math.floor(Math.random()*(9-7))+7
                 }
 
-                let aux = board[r1]
-                board[r1] = board[r2]
-                board[r2] = aux
+                let aux = sh[r1]
+                sh[r1] = sh[r2]
+                sh[r2] = aux
             }
         }
         
@@ -114,9 +116,9 @@ function shuffleBoard(board){
                 }
 
                 for (let i = 0; i < 9; i++){
-                    let aux = board[i][c1]
-                    board[i][c1] = board[i][c2]
-                    board[i][c2] = aux
+                    let aux = sh[i][c1]
+                    sh[i][c1] = sh[i][c2]
+                    sh[i][c2] = aux
                 }
             }
 
@@ -128,9 +130,9 @@ function shuffleBoard(board){
                 }
 
                 for (let i = 0; i < 9; i++){
-                    let aux = board[i][c1]
-                    board[i][c1] = board[i][c2]
-                    board[i][c2] = aux
+                    let aux = sh[i][c1]
+                    sh[i][c1] = sh[i][c2]
+                    sh[i][c2] = aux
                 }
 
             }
@@ -142,16 +144,16 @@ function shuffleBoard(board){
                 }
 
                 for (let i = 0; i < 9; i++){
-                    let aux = board[i][c1]
-                    board[i][c1] = board[i][c2]
-                    board[i][c2] = aux
+                    let aux = sh[i][c1]
+                    sh[i][c1] = sh[i][c2]
+                    sh[i][c2] = aux
                 }
                 
             }
         }
 
     }
-    return board
+    return sh
 }
 
 function generateLevel(board){
@@ -196,7 +198,6 @@ function getFinishedMatrix(){
             solved[i].push(value)
         }
     }
-    console.log(solved)
     return solved
 }
 function compare(shuffle, solved){
